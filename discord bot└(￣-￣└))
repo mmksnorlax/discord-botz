@@ -3,13 +3,57 @@ this is just what works for me..
 i use discord, discord.js, node.js, javascript, VSC (visual studio code) and a linter.
 (づ￣ ³￣)づ
 once node.js is downloaded <------ (v16.9.0 or higher) i use v18.16.0 personally !!! :3 ------>
+hit win + R , then run cmd.exe , this should bring up another window !!! 
+enter node -v to check version btw .. 
+-------------------------------------------------------------------------------------------------
 install discord.js through node.js; 
         npm init <----- initiate project folder, project.json, answer questions that follow !!
-        npm init -y 
+        npm init -y for it to answer all questions for you aka what i do !!! 
         npm install discord.js
+mine looks like this !
+Microsoft Windows [Version 10.0.22621.1555]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Snorlax>node -v
+v18.16.0
+
+C:\Users\Snorlax>npm init -y
+Wrote to C:\Users\Snorlax\package.json:
+
+{
+  "name": "snorlax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+
+C:\Users\Snorlax>npm install discord.js
+
+added 35 packages, and audited 36 packages in 24s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+C:\Users\Snorlax>
+-------------------------------------------------------------------------------------------------		
 install a linter;
-        through VSC ; npm install --save-dev eslint (ctrl + shift + x for plugins on VSC)
-        create a directory / name .eslintrc.json + enter;
+i install a linter to ease the issues that arise from mostly syntax errors :] helps streamline the code .｡･ﾟﾟ･(＞_＜)･ﾟﾟ･｡.
+        in your project directory add npm install --save-dev eslint 
+	
+	NOW MOVING TO VSC - VIRUTAL STUDIO CODE !!!!☆⌒(≧▽°)
+	
+	view plug ins for VSC -- ctrl + shift + x and install eslint add on ! 
+        name the file in your vsc proj. directory .eslintrc.json then enter;
 {
 	"extends": "eslint:recommended",
 	"env": {
@@ -64,4 +108,29 @@ general rules i use ;
 		"yoda": "error"
 https://eslint.org/docs/latest/rules/ for rule directory !!!!! ଘ(੭ˊ꒳ˋ)੭✧
 the rules are self explanatory but just makes the coding aspect easy peasy
-[UNFINISHED!!!!!!!!!!!!!!!!!!!]
+
+	NOW MOVE TO DISCORDS DEVELOPER PORTAL !
+	hit new application 
+	enter a name for your bot and confirm , the actual creation of what bot you want is individual and self explanatory imo 
+	once ready, click add bot in the bot tab on the left hand side! 
+	THIS SECTION IS CRITICAL !!! SECURITY !!!!!
+	your bots token -- essentially the pin/password for your bot , this allows you to modify your bot and anyone with the token can also modify it
+	this is an example of a token <-------- NzkyNzE1NDU0MTk2MDg4ODQy.X-hvzA.Ovy4MCQywSkoMRRclStW4xAYK7I
+	the shorter version is a client secret instead lol 
+	if the token is leaked and you need to remove other users access, hit reset token and this will invalidate every previous occassion the token has been used
+putting the bot in the server time!!!
+
+the structure of the url 
+			https://discord.com/api/oauth2/authorize <--- standard authorization structure lol >_<
+			client_id=... <--- which application to authorize, replace this part with your clients id for a valid link
+			permissions=...	<--- what permissions your bot will have
+			scope=bot%20applications.commands <--- specifies that you wanna add the application as a discord bot with slash command abilities
+			
+CONFIRGURING FILES !!!! ٩(｡•́‿•̀｡)۶
+let's create a config.json file in our project directory to store our data and sensitive info !! i.e our token!! 
+{
+	"token": "your-token-goes-here"
+}
+
+
+
